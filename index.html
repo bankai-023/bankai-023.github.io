@@ -1,101 +1,109 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
-        />
-        <title>Arcade Vehicle Game</title>
-        
-        <!-- AdSense code snippet -->
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1178190705283476"
-            crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+    />
+    <title>Arcade Vehicle Game</title>
 
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div id="game-container">
-            <canvas id="gameCanvas"></canvas>
+    <!-- AdSense code snippet -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1178190705283476"
+      crossorigin="anonymous">
+    </script>
 
-            <!-- HUD -->
-            <div id="hud">
-                <div class="stats-group">
-                    <div class="stat-card">
-                        <span class="label">SPEED</span>
-                        <span id="speed-val">0</span>
-                        <span class="unit">KM/H</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="label">TIME</span>
-                        <span id="time-val">00:00:00</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="label">POINTS</span>
-                        <span id="points-val">0</span>
-                    </div>
-                </div>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-29NC4ZC0GT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-29NC4ZC0GT');
+    </script>
 
-                <div class="top-controls">
-                    <button id="shop-btn" class="icon-btn">🛒</button>
-                    <div id="mode-indicator" class="mode-tag car">
-                        <span id="mode-icon">🚗</span>
-                        <span id="mode-text">CAR</span>
-                    </div>
-                </div>
-            </div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-            <!-- Shop -->
-            <div id="shop-overlay" class="hidden">
-                <div class="shop-card">
-                    <div class="shop-header">
-                        <h2>VEHICLE SHOP</h2>
-                        <button id="close-shop">✕</button>
-                    </div>
-                    <div class="shop-content">
-                        <section>
-                            <h3>UPGRADES</h3>
-                            <div class="upgrade-item">
-                                <div class="info">
-                                    <strong>Map Expansion</strong>
-                                    <span
-                                        >+50 Grid boundaries & New Hurdles</span
-                                    >
-                                </div>
-                                <button id="buy-upgrade">8,000 PTS</button>
-                            </div>
-                        </section>
-                        <section>
-                            <h3>CARS</h3>
-                            <div id="car-list" class="skin-grid"></div>
-                        </section>
-                        <section>
-                            <h3>AIRPLANES</h3>
-                            <div id="plane-list" class="skin-grid"></div>
-                        </section>
-                    </div>
-                </div>
-            </div>
+  <body>
+    <div id="game-container">
+      <canvas id="gameCanvas"></canvas>
 
-            <!-- Mobile Controls -->
-            <div id="mobile-controls" class="hidden">
-                <button id="mode-swap" class="ctrl-btn circle">✈️</button>
-                <div class="bottom-row">
-                    <div class="steer-group">
-                        <button id="btn-left" class="ctrl-btn">L</button>
-                        <button id="btn-right" class="ctrl-btn">R</button>
-                    </div>
-                    <div class="drive-group">
-                        <button id="btn-gas" class="ctrl-btn primary">
-                            GAS
-                        </button>
-                        <button id="btn-brake" class="ctrl-btn danger">
-                            BRK
-                        </button>
-                    </div>
-                </div>
-            </div>
+      <!-- HUD -->
+      <div id="hud">
+        <div class="stats-group">
+          <div class="stat-card">
+            <span class="label">SPEED</span>
+            <span id="speed-val">0</span>
+            <span class="unit">KM/H</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">TIME</span>
+            <span id="time-val">00:00:00</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">POINTS</span>
+            <span id="points-val">0</span>
+          </div>
         </div>
-        <script src="script.js"></script>
-    </body>
+
+        <div class="top-controls">
+          <button id="shop-btn" class="icon-btn">🛒</button>
+          <div id="mode-indicator" class="mode-tag car">
+            <span id="mode-icon">🚗</span>
+            <span id="mode-text">CAR</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shop -->
+      <div id="shop-overlay" class="hidden">
+        <div class="shop-card">
+          <div class="shop-header">
+            <h2>VEHICLE SHOP</h2>
+            <button id="close-shop">✕</button>
+          </div>
+          <div class="shop-content">
+            <section>
+              <h3>UPGRADES</h3>
+              <div class="upgrade-item">
+                <div class="info">
+                  <strong>Map Expansion</strong>
+                  <span>+50 Grid boundaries & New Hurdles</span>
+                </div>
+                <button id="buy-upgrade">8,000 PTS</button>
+              </div>
+            </section>
+            <section>
+              <h3>CARS</h3>
+              <div id="car-list" class="skin-grid"></div>
+            </section>
+            <section>
+              <h3>AIRPLANES</h3>
+              <div id="plane-list" class="skin-grid"></div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Controls -->
+      <div id="mobile-controls" class="hidden">
+        <button id="mode-swap" class="ctrl-btn circle">✈️</button>
+        <div class="bottom-row">
+          <div class="steer-group">
+            <button id="btn-left" class="ctrl-btn">L</button>
+            <button id="btn-right" class="ctrl-btn">R</button>
+          </div>
+          <div class="drive-group">
+            <button id="btn-gas" class="ctrl-btn primary">GAS</button>
+            <button id="btn-brake" class="ctrl-btn danger">BRK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
